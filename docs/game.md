@@ -31,21 +31,23 @@ pipenv shell
 ```
 
 ### Running the server
+Each student should run his server on a different server port and a different web port, we will let you know in which ports you should use.
 
 ```
-./rose-server
+./rose-server --server-port 1234 --web-port 8881
 ```
 
 ### Viewing the game UI in a browser
 
 ```
-http://localhost:8880/
+http://localhost:8881/
 ```
 
 ### Run example driver
+You should run the client with the same server port you used to run the server:
 
 ```
-./rose-client examples/random-driver.py
+./rose-client examples/random-driver.py --server-port 1234 --web-port 8881
 ```
 
 ## Writing your driver
@@ -64,8 +66,13 @@ def drive(world):
 ```
 
 In order to run your driver, use:
+
+Don't forget to add your ports when running the server and client.
+If you want to connect to your friend server, you should run the client with the same server port and web port he used.
+
+
 ```
-./rose-client yourname.py
+./rose-client yourname.py --server-port 1234 --web-port 8881
 ```
 
 ### Print your car location
